@@ -5,20 +5,21 @@ Mailgun.configure do |config|
   config.domain = 'sandbox6bf4021a7df648069f6dc4f4d18158b4.mailgun.org'
 end
 
-def send
+def send(email)
   @mailgun = Mailgun()
 
 
 
   parameters = {
     :to => "tokidokicupcake@gmail.com",
-    :subject => "email",
-    :text => "this is great.",
+    :subject => "THIS IS JULIA",
+    :text => "I AM SENDING THIS FROM AN APP I MADE IN PROGRAMMING!! :)",
     :from => "postmaster@sandbox6bf4021a7df648069f6dc4f4d18158b4.mailgun.org"
   }
+  parameters[:to] = email
   @mailgun.messages.send_email(parameters)
 end
 end
 
 hello= Email.new 
-hello.send
+hello.send("tokidokicupcake@gmail.com")
