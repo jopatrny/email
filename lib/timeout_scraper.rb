@@ -21,7 +21,7 @@ class ScrapeEvents
       :event => section.children[3].children[1].children[1].children[0].text.strip,
       :image_link =>  section.children[1].children[1].children[1].children[1].attributes["data-src"].value,
       :description => section.children[3].children[4].children[0].text,
-      :location => section.children[5].children[1].children[1].children[1].children.text,
+      :location => section.children[5].children[1].children[0].children[1].children[0].text,
        #:time => if section.children[5].children[1].children[3] #== nil 
       #           "N/A"
       #         else 
