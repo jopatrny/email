@@ -3,7 +3,7 @@
 #call the method to send your email on that instance of your messaging class
 require 'Nokogiri'
 require 'open-uri'
-require './sendemails.rb'
+require './lib/sendemails.rb'
 
 task :emailevent do
 
