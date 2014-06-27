@@ -11,7 +11,6 @@ class Email
   def send(email)
     @mailgun = Mailgun()
 
-    Events.create_events
      scraper = ScrapeEvents.new
 
 
@@ -23,6 +22,7 @@ class Email
     }
     parameters[:to] = email
     parameters[:text] = []
+    Events.create_events
     Events.all.each do |event|
       parameters[:text] << "#{event.event}
 #{event.description} 
