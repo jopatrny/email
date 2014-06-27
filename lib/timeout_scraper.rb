@@ -17,6 +17,7 @@ class ScrapeEvents
     @timeout.css(".small.row.center").each do |section|
       title = section.children[3].children[1].children[1].children[0].text.strip
       all_events[title] = {
+        binding.pry
       :event => section.children[3].children[1].children[1].children[0].text.strip,
       :image_link =>  section.children[1].children[1].children[1].children[1].attributes["data-src"].value,
       :description => section.children[3].children[5].children[0].text,
